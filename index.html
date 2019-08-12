@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPG-challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <h1>Clash of the Races</h1>
+    </div>
+
+    <div id="container">
+        <div id="card">
+            <header id="header" class="back">
+                <div class="buttons">
+                    <button id="phit1">hit</button>
+                    <button id="pheal1">heal</button>
+                    <button id="pyield1">yield</button>
+                </div>
+                <div id=stat1>
+                    <span id="pName1">Name: </span>
+                    <span id="pRace1">Race: </span>
+                    <span id="pItem1">Items: </span>
+                </div>
+                <div id="coinTossbtn"><button class="coinTossbtn" type="button" value="Coin Toss">Coin Toss</button></div>
+                <div id=stat2>
+                    <span id="pName2">Name: </span>
+                    <span id="pRace2">Race: </span>
+                    <span id="pItem2">Items: </span>
+                </div>
+                <div class="buttons">
+                    <button id="phit2">hit</button>
+                    <button id="pheal2">heal</button>
+                    <button id="pyield2">yield</button>
+                </div>
+            </header>
+            <footer id="footer" class="front">
+                <div class="create">
+                    <form action="">
+                        <fieldset>
+                            <legend>Player1 setup:</legend>
+                            Choose name:<br>
+                            <input id="player1Name" type="text" name="firstname" placeholder=" choose your name" maxlength="10"><br>
+                            <label>Item:</label>
+                            <select id="item1">
+                                <option value="boots">boots</option>
+                                <option value="staff">staff</option>
+                                <option value="sword">sword</option>
+                                <option value="bow">bow</option>
+                            </select><br>
+
+                            <label>Race:</label>
+                            <select id="race1">
+                                <option value="humans">humans</option>
+                                <option value="orcs">orcs</option>
+                                <option value="elves">elves</option>
+                                <option value="vampires">vampires</option>
+                            </select>
+
+                        </fieldset>
+                    </form>
+                </div>
+                <button id="createbtn" type="button" value="Create">Create</button>
+                <div class="create">
+                    <form action="">
+                        <fieldset>
+                            <legend>Player2 setup:</legend>
+                            Choose name:<br>
+                            <input id="player2Name" type="text" name="firstname" placeholder=" choose your name" maxlength="10"><br>
+                            <label>Item:</label>
+                            <select id="item2">
+                                <option value="boots">boots</option>
+                                <option value="staff">staff</option>
+                                <option value="sword">sword</option>
+                                <option value="bow">bow</option>
+                            </select><br>
+
+                            <label>Race:</label>
+                            <select id="race2">
+                                <option value="humans">humans</option>
+                                <option value="orcs">orcs</option>
+                                <option value="elves">elves</option>
+                                <option value="vampires">vampires</option>
+                            </select>
+                        </fieldset>
+                    </form>
+                </div>
+            </footer>
+        </div>
+        <section id="arena">
+            <section id="player1">
+                <div class="health">
+                    <h4>Health: </h4>
+                    <div id="progress1">
+                        <div id="bar1"></div>
+                    </div>
+                </div>
+                <div id="img1">
+                    <img id="pic1" src="images/" alt="">
+                    <img id="item1pic" src="images/" alt="">
+                </div>
+
+            </section>
+            <div id="bg"><button id="play">VS</button></div>
+            <section id="player2">
+                <div class="health">
+                    <h4>Health: </h4>
+                    <div id="progress2">
+                        <div id="bar2"></div>
+                    </div>
+                </div>
+                <div id="img2">
+                    <img id="pic2" src="images/" alt="">
+                    <img id="item2pic" src="images/" alt="">
+                </div>
+
+            </section>
+        </section>
+
+    </div>
+    <script type="module" src="gamelogic.js"></script>
+    <script type="module" src="character.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js">
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js">
+            <
+            /body></html >
