@@ -1,9 +1,9 @@
 import {
     createdChar1
-} from "gamelogic.js";
+} from "./gamelogic.js";
 import {
     createdChar2
-} from "gamelogic.js";
+} from "./gamelogic.js";
 
 var healthPercentage1;
 var healthPercentage2;
