@@ -23,7 +23,7 @@ function create() {
     var phit2 = document.getElementById("phit2");
     var pheal2 = document.getElementById("pheal2");
     var pyield2 = document.getElementById("pyield2");
-    
+
     //adds filter to the bg
     //document.getElementById("container").style.filter = "brightness(40%)";
 
@@ -123,7 +123,7 @@ function create() {
         createdChar2.currenthealth = 100 + ((100 * 40) / 100);
         document.getElementById("pic2").src = "images/orc.jpeg";
         document.getElementById("progress2").style.width = "100%";
-        
+
     } else {
         createdChar2.currenthealth = 100;
     }
@@ -212,12 +212,6 @@ function pyield() {
     }
 
 }
-
-$("#card").flip({
-    axis: 'x',
-    trigger: 'click',
-    reverse: false
-});
 
 
 
