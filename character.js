@@ -202,8 +202,8 @@ export default function Person(race, item) {
 
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
-            document.getElementById("pic2").style.width = healthPercentage2 + "%";
-            document.getElementById("pic2").style.height = healthPercentage2 + "%";
+            //document.getElementById("pic2").style.width = healthPercentage2 + "%";
+            //document.getElementById("pic2").style.height = healthPercentage2 + "%";
 
             moveAndLog(p1Name, "hit", randomDamage);
 
