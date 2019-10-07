@@ -1,4 +1,4 @@
-import Person from "/character.js";
+import Person from "character.js";
 var chosenRace1;
 var chosenItem1;
 var chosenRace2;

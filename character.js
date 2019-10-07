@@ -1,9 +1,9 @@
 import {
     createdChar1
-} from "/gamelogic.js";
+} from "gamelogic.js";
 import {
     createdChar2
-} from "/gamelogic.js";
+} from "gamelogic.js";
 
 var healthPercentage1;
 var healthPercentage2;
@@ -35,7 +35,7 @@ export default function Person(race, item) {
     var p2Name = document.getElementById("player2Name").value;
 
     //healing function
-    this.heal = function () {
+    this.heal = function() {
         //making sure player 1 hits his heal button
         if (event.target == document.getElementById("pheal1")) {
             var randomHealValue = Math.floor(Math.random() * (createdChar1.maxHealing - createdChar1.min + 1) + createdChar1.min);
@@ -55,7 +55,7 @@ export default function Person(race, item) {
                 createdChar1.currenthealth = createdChar1.maxHealth;
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
             }
-            
+
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
             document.getElementById("pic1").style.width = healthPercentage1 + "%";
@@ -84,7 +84,7 @@ export default function Person(race, item) {
                 createdChar2.currenthealth = createdChar2.maxHealth;
                 healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
             }
-            
+
 
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
@@ -100,7 +100,7 @@ export default function Person(race, item) {
 
     };
 
-    this.damage = function () {
+    this.damage = function() {
         //calculate var for all chance percentages
         var chance = Math.random();
 
@@ -219,7 +219,7 @@ export default function Person(race, item) {
                 alert(p2Name + " is knocked out!\n" + p1Name + " wins!");
                 location.reload();
             }
-          
+
             disableP1EnableP2();
 
             //check if player 2 hits button
@@ -337,7 +337,7 @@ export default function Person(race, item) {
                 document.getElementById("bar1").innerHTML = "0";
                 document.getElementById("bar1").style.width = "0%";
                 //review below function
-               // playAudio("sounds/smash.wav");
+                // playAudio("sounds/smash.wav");
 
                 alert(p1Name + " is knocked out!\n" + p2Name + " wins!");
                 location.reload();
@@ -407,7 +407,7 @@ export default function Person(race, item) {
             document.getElementById("bar2").style.backgroundColor = "red";
         } else if (createdChar2.currenthealth > 30) {
             document.getElementById("bar2").style.backgroundColor = "#4CAF50";
-        } 
+        }
         if (createdChar1.currenthealth <= 30) {
             document.getElementById("bar1").style.backgroundColor = "red";
         } else if (createdChar1.currenthealth > 30) {
@@ -415,15 +415,15 @@ export default function Person(race, item) {
         }
     }
 
-    
+
     //function to log the moves and damage
-    function moveAndLog (who, what, result) {
-        
-        if ( what == "heals" ) {
-            moveLog.innerHTML += i +" " + who + " heals +" + result + ".<br>";
-        } else if ( what == "hit") {     
-            moveLog.innerHTML += i + ". " + who + " " + what + ".<br>";    
-            if(who == p1Name) { 
+    function moveAndLog(who, what, result) {
+
+        if (what == "heals") {
+            moveLog.innerHTML += i + " " + who + " heals +" + result + ".<br>";
+        } else if (what == "hit") {
+            moveLog.innerHTML += i + ". " + who + " " + what + ".<br>";
+            if (who == p1Name) {
                 who = p2Name;
                 if (result === 0) {
                     moveLog.innerHTML += who + " dodged.<br>";
@@ -442,16 +442,16 @@ export default function Person(race, item) {
                 } else if (createdChar2.race == "vampires") {
                     moveLog.innerHTML += who + " took -" + result + " damage and lost extra 10.<br>";
                 }
-            } 
+            }
         }
-        
+
         //moveLog.style.textAlign = "right"; - this shoul alter between right and left 
         i++;
     }
 
     //function playAudio(x) {
-   //     x.play()
-   // }
+    //     x.play()
+    // }
 
     this.totalDamage = this.damage();
 
