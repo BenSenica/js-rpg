@@ -211,8 +211,6 @@ export default function Person(race, item) {
 
             //check if player 2 hits 0 hp and pronounce winner is so
             if (createdChar2.currenthealth <= 0) {
-                //createdChar2.currenthealth = 0;
-                //healthPercentage2 = 0;
                 document.getElementById("bar2").innerHTML = "0";
                 document.getElementById("bar2").style.width = "0%";
 
@@ -332,12 +330,8 @@ export default function Person(race, item) {
 
             //check if player 1 hits 0 hp and pronounce winner is so
             if (createdChar1.currenthealth <= 0) {
-                //createdChar1.currenthealth = 0;
-                //healthPercentage1 = 0;
                 document.getElementById("bar1").innerHTML = "0";
                 document.getElementById("bar1").style.width = "0%";
-                //review below function
-                // playAudio("sounds/smash.wav");
 
                 alert(p1Name + " is knocked out!\n" + p2Name + " wins!");
                 location.reload();

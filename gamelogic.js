@@ -24,9 +24,6 @@ function create() {
     var pheal2 = document.getElementById("pheal2");
     var pyield2 = document.getElementById("pyield2");
 
-    //adds filter to the bg
-    //document.getElementById("container").style.filter = "brightness(40%)";
-
     //running functions to get required values
     raceFunctionOne();
     itemFunctionOne();
@@ -87,9 +84,6 @@ function create() {
             break;
     }
 
-    //-webkit-transform: scaleX(-1);
-    // transform: scaleX(-1);
-
     switch (chosenRace2) {
         case "humans":
             document.getElementById("pic2").src = "images/human.png";
@@ -127,15 +121,9 @@ function create() {
     } else {
         createdChar2.currenthealth = 100;
     }
-    document.getElementById("footer").style.display = "none";
-    document.getElementById("header").style.display = "flex";
-    document.getElementById("player1").style.visibility = "visible";
-    document.getElementById("player2").style.visibility = "visible";
-    document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
-    document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
-    document.getElementById("bar1").style.width = healthPercentage1 + "%";
-    document.getElementById("bar2").style.width = createdChar2.currenthealth + "%";
 
+
+    //displaying correct item img
     switch (chosenItem1) {
         case "boots":
             document.getElementById("item1pic").src = "images/boots.jpeg";
@@ -166,10 +154,10 @@ function create() {
             break;
     }
 
+    //determining who gets to act first
     function coinToss() {
         var toss = Math.random();
-        //removes the filter from the background  - to do 
-        //document.getElementById("container").style.filter = "brightness(100%)";
+
         if (toss < 0.5) {
             phit1.disabled = false;
             phit1.classList.remove("disabledHit");
@@ -201,7 +189,7 @@ function create() {
     }
 }
 
-
+//yield function
 function pyield() {
     if (event.target == document.getElementById("pyield1")) {
         alert(p1Name + " yields" + "..." + p2Name + " WINS!");
