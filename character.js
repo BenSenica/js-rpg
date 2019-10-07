@@ -445,6 +445,6 @@ export default function Person(race, item) {
 
     this.totalDamage = this.damage();
 
-    displayChar(this.race, this.item, this.maxHealth);
+
 
 }
