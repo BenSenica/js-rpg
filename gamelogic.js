@@ -121,7 +121,14 @@ function create() {
     } else {
         createdChar2.currenthealth = 100;
     }
-
+    document.getElementById("footer").style.display = "none";
+    document.getElementById("header").style.display = "flex";
+    document.getElementById("player1").style.visibility = "visible";
+    document.getElementById("player2").style.visibility = "visible";
+    document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
+    document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
+    document.getElementById("bar1").style.width = healthPercentage1 + "%";
+    document.getElementById("bar2").style.width = createdChar2.currenthealth + "%";
 
     //displaying correct item img
     switch (chosenItem1) {
