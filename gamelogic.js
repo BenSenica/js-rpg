@@ -10,11 +10,8 @@ var p2Name;
 var healthPercentage1;
 var healthPercentage2;
 
-
 //added click event to the create button
 document.getElementById("createbtn").addEventListener("click", create);
-
-
 
 function create() {
     var phit1 = document.getElementById("phit1");
@@ -29,6 +26,7 @@ function create() {
     itemFunctionOne();
     raceFunctionTwo();
     itemFunctionTwo();
+
     //creating the characters and displaying those values
     createdChar1 = new Person(chosenRace1, chosenItem1);
     createdChar2 = new Person(chosenRace2, chosenItem2);
@@ -69,7 +67,6 @@ function create() {
     pyield2.disabled = true;
     pyield2.classList.add("disabledYield");
 
-
     //adding race picture
     switch (chosenRace1) {
         case "humans":
@@ -105,7 +102,6 @@ function create() {
         document.getElementById("pic1").src = "images/orc.jpeg";
         document.getElementById("pic1").style.transform = "scaleX(-1)";
         document.getElementById("progress1").style.width = "100%";
-
 
     } else {
         createdChar1.currenthealth = 100;
@@ -208,15 +204,12 @@ function pyield() {
 
 }
 
-
-
 export {
     createdChar1
 }
 export {
     createdChar2
 }
-
 
 // storing chosen races in variables
 function raceFunctionOne() {

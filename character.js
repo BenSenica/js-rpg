@@ -55,11 +55,8 @@ export default function Person(race, item) {
                 createdChar1.currenthealth = createdChar1.maxHealth;
                 healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
             }
-
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
-            //document.getElementById("pic1").style.width = healthPercentage1 + "%";
-            //document.getElementById("pic1").style.height = healthPercentage1 + "%";
 
             moveAndLog(p1Name, "heals", healingValue);
 
@@ -85,11 +82,8 @@ export default function Person(race, item) {
                 healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
             }
 
-
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
-            //document.getElementById("pic2").style.width = healthPercentage2 + "%";
-            //document.getElementById("pic2").style.height = healthPercentage2 + "%";
 
             moveAndLog(p2Name, "heals", healingValue);
 
@@ -120,8 +114,7 @@ export default function Person(race, item) {
 
                 document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                 document.getElementById("bar1").style.width = healthPercentage1 + "%";
-                //document.getElementById("pic1").style.width = healthPercentage1 + "%";
-                //document.getElementById("pic1").style.height = healthPercentage1 + "%";
+
                 barColorChange();
                 console.log(moveAndLog);
             }
@@ -178,6 +171,7 @@ export default function Person(race, item) {
                 healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
             }
 
+            //check if Elf for counterattack
             if (createdChar2.race == "elves") {
                 if (chance < 0.3) {
                     randomDamage = Math.ceil(randomDamage * 0.5);
@@ -185,8 +179,6 @@ export default function Person(race, item) {
                     healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth)
                     document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                     document.getElementById("bar1").style.width = healthPercentage1 + "%";
-                    //document.getElementById("pic1").style.width = healthPercentage1 + "%";
-                    //document.getElementById("pic1").style.height = healthPercentage1 + "%";
                     barColorChange();
 
                 } else {
@@ -194,16 +186,12 @@ export default function Person(race, item) {
                     healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth);
                     document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
                     document.getElementById("bar2").style.width = healthPercentage2 + "%";
-                    //document.getElementById("pic2").style.width = healthPercentage2 + "%";
-                    //document.getElementById("pic2").style.height = healthPercentage2 + "%";
                     barColorChange();
                 }
             }
 
             document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
             document.getElementById("bar2").style.width = healthPercentage2 + "%";
-            //document.getElementById("pic2").style.width = healthPercentage2 + "%";
-            //document.getElementById("pic2").style.height = healthPercentage2 + "%";
 
             moveAndLog(p1Name, "hit", randomDamage);
 
@@ -237,11 +225,8 @@ export default function Person(race, item) {
                 };
                 document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
                 document.getElementById("bar2").style.width = healthPercentage2 + "%";
-                //document.getElementById("pic2").style.width = healthPercentage2 + "%";
-                //document.getElementById("pic2").style.height = healthPercentage2 + "%";
                 barColorChange();
             }
-
 
             //check what item player 2 is using 
             switch (createdChar2.item) {
@@ -261,8 +246,6 @@ export default function Person(race, item) {
 
                             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                             document.getElementById("bar1").style.width = healthPercentage1 + "%";
-                            //document.getElementById("pic1").style.width = healthPercentage1 + "%";
-                            //document.getElementById("pic1").style.height = healthPercentage1 + "%";
                             barColorChange();
 
                             i++;
@@ -282,7 +265,6 @@ export default function Person(race, item) {
                     }
                     break;
             }
-
 
             //calculate done damage and push to html
 
@@ -304,8 +286,6 @@ export default function Person(race, item) {
                     healthPercentage2 = createdChar2.currenthealth * (100 / createdChar2.maxHealth)
                     document.getElementById("bar2").innerHTML = createdChar2.currenthealth;
                     document.getElementById("bar2").style.width = healthPercentage2 + "%";
-                    //document.getElementById("pic2").style.width = healthPercentage2 + "%";
-                    //document.getElementById("pic2").style.height = healthPercentage2 + "%";
                     barColorChange();
 
                 } else {
@@ -313,18 +293,13 @@ export default function Person(race, item) {
                     healthPercentage1 = createdChar1.currenthealth * (100 / createdChar1.maxHealth);
                     document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
                     document.getElementById("bar1").style.width = healthPercentage1 + "%";
-                    //document.getElementById("pic1").style.width = healthPercentage1 + "%";
-                    //document.getElementById("pic1").style.height = healthPercentage1 + "%";
                     barColorChange();
                     console.log("P1 curr health" + createdChar1.currenthealth);
                 }
             }
 
-
             document.getElementById("bar1").innerHTML = createdChar1.currenthealth;
             document.getElementById("bar1").style.width = healthPercentage1 + "%";
-            //document.getElementById("pic1").style.width = healthPercentage1 + "%";
-            //document.getElementById("pic1").style.height = healthPercentage1 + "%";
             moveAndLog(p2Name, "hit", randomDamage);
             barColorChange();
 
@@ -339,10 +314,9 @@ export default function Person(race, item) {
 
             disableP2EnableP1();
         }
-
-
     }
 
+    //disable functions to prevent cheating
     function disableP1EnableP2() {
         phit1.disabled = true;
         phit1.classList.remove("hit")
@@ -409,7 +383,6 @@ export default function Person(race, item) {
         }
     }
 
-
     //function to log the moves and damage
     function moveAndLog(who, what, result) {
 
@@ -440,11 +413,5 @@ export default function Person(race, item) {
         }
         i++;
     }
-
-
-
     this.totalDamage = this.damage();
-
-
-
 }
